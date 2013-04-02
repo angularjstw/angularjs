@@ -1,11 +1,287 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>AngularJS 台灣社群</title>
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div id="top">
+			<div class="fixed">
+				<a href="index-2.html" title="" class="logo"><img src="img/logo_s.png" alt="" style="margin-top:-10px"></a>
+				<h2 style="color:#eee;">AngularJS 台灣社群</h2>
+				<!-- <ul class="top-menu">
+					<li><a class="fullview"></a></li>
+					<li><a class="showmenu"></a></li>
+					<li><a href="#" title="" class="messages"><i class="new-message"></i></a></li>
+					<li class="dropdown">
+						<a class="user-menu" data-toggle="dropdown"><img src="img/userpic.png" alt=""><span>Howdy, Eugene! <b class="caret"></b></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" title=""><i class="icon-user"></i>Profile</a></li>
+							<li><a href="#" title=""><i class="icon-inbox"></i>Messages<span class="badge badge-info">9</span></a></li>
+							<li><a href="#" title=""><i class="icon-cog"></i>Settings</a></li>
+							<li><a href="#" title=""><i class="icon-remove"></i>Logout</a></li>
+						</ul>
+					</li>
+				</ul> -->
+			</div>
+		</div>
+		<div id="container">
+			<div id="sidebar">
+				<div class="sidebar-tabs" data-easytabs="true" style="">
+			        <ul class="tabs-nav two-items">
+			            <li class="active"><a href="#general" title="" class="active"><i class="icon-reorder"></i></a></li>
+			            <li class=""><a href="#stuff" title="" class="">收藏清單</a></li>
+			        </ul>
+			        <div id="general" style="display: block; position: static; visibility: visible;" class="active">
+				        本站收集以下
+				        <div class="general-stats widget">
+					        <ul class="head">
+					        	<li style="width:70%"><span>Open Source Plugins</span></li>
+					        	<li style="width:29.5%"><span>教學</span></li>
+					        </ul>
+					        <ul class="body">
+					        	<li style="width:70%"><strong>116k+</strong></li>
+					        	<li style="width:29.5%"><strong>1290</strong></li>
+					        </ul>
+					    </div>
+					    <!-- Main navigation -->
+				        <ul class="navigation widget">
+				            <li class="active"><a href="index.html" title=""><i class="icon-home"></i>套件分類</a></li>
+				            <li><a href="#" title="" class="expand subClosed"><i class="icon-reorder"></i>Form elements<strong>3</strong></a>
+				                <ul style="display: none;">
+				                    <li><a href="forms.html" title="">Form components</a></li>
+				                    <li><a href="wysiwyg.html" title="">WYSIWYG editor</a></li>
+				                    <li><a href="form_wizards.html" title="">Wizards</a></li>
+				                </ul>
+				            </li>
+				        </ul>
+
+				        <!-- /main navigation -->
+				        <div class="widget">
+				        	<h6 class="widget-name"><i class="icon-twitter"></i>友站連結</h6>
+				        	<ul class="social-stats">
+				        		<li>
+				        			<a href="http://www.facebook.com/groups/javascript.tw/" title="" class="dark-blue-square"><i class="icon-facebook"></i></a>
+				        			<div>
+					        			<h4>Javascript.tw</h4>
+					        			<span></span>
+					        		</div>
+				        		</li>
+				        		<li>
+				        			<a href="http://www.facebook.com/groups/node.js.tw/" title="" class="dark-blue-square"><i class="icon-facebook"></i></a>
+				        			<div>
+					        			<h4>NodeJS.tw</h4>
+					        			<span></span>
+					        		</div>
+				        		</li>
+				        		<li>
+				        			<a href="http://www.facebook.com/groups/htmlfive/" title="" class="dark-blue-square"><i class="icon-facebook"></i></a>
+				        			<div>
+					        			<h5>Html5 CSS3 在台灣</h5>
+					        			<span></span>
+					        		</div>
+				        		</li>
+				        	</ul>
+				        </div>
+			        </div>
+			    </div>
+		    </div>
+		    <div id="content">
+		    	<div class="wrapper">
+		    		<ul class="options-bar">
+		    			<li>
+			    			<div class="bar-select pull-left">
+				    			<span>Sorting: </span>
+				                <div class="selector" id="uniform-undefined"><span>Sort by date</span><select name="select2" class="styled" style="opacity: 0;">
+				                    <option value="opt1">Sort by date</option>
+				                    <option value="opt2">Sort by time</option>
+				                    <option value="opt3">Sort by category</option>
+				                    <option value="opt4">Sort by size</option>
+				                </select></div>
+				            </div>
+
+		                    <div class="loading pull-left">
+		                        <span>Updating list</span>
+		                        <img src="img/elements/loaders/6s.gif" alt="">
+		                    </div>
+		    			</li>
+		    			<li class="bar-entries">
+		    				<span>Showing 8 of 1290 entries &nbsp;&nbsp;/&nbsp;&nbsp; New entries: <strong class="">+12</strong></span>
+		    			</li>
+		    			<li>
+				    		<div class="pull-right bulk">
+				    			<div class="bar-select">
+					    			<span>Bulk actions: </span>
+					                <div class="selector" id="uniform-undefined"><span>Edit</span><select name="select2" class="styled" style="opacity: 0;">
+					                    <option value="opt1">Edit</option>
+					                    <option value="opt2">Unpublish</option>
+					                    <option value="opt3">Publish</option>
+					                    <option value="opt4">Move to trash</option>
+					                </select></div>
+					            </div>
+
+					            <div class="bar-button">
+					            	<button type="button" class="btn btn-info">Apply</button>
+					            </div>
+				    		</div>
+		    			</li>
+		    		</ul>
+		    		<h5 class="widget-name"><i class="icon-th"></i>Grid gallery items</h5>
+		    		<div class="media row-fluid">
+
+					<div class="span3">
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox" style="display: none;"></a>
+							    	<img src="img/demo/media/1.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox"></a>
+							    	<img src="img/demo/media/2.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+					</div>
+
+					<div class="span3">
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox" style="display: none;"></a>
+							    	<img src="img/demo/media/3.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox"></a>
+							    	<img src="img/demo/media/4.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+					</div>
+
+					<div class="span3">
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox" style="display: none;"></a>
+							    	<img src="img/demo/media/5.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox"></a>
+							    	<img src="img/demo/media/6.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+					</div>
+
+					<div class="span3">
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox" style="display: none;"></a>
+							    	<img src="img/demo/media/7.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+
+						<div class="widget">
+						    <div class="well">
+						    	<div class="view">
+									<a href="img/demo/big.jpg" class="view-back lightbox"></a>
+							    	<img src="img/demo/media/8.png" alt="">
+							    </div>
+						    	<div class="item-info">
+						    		<a href="#" title="" class="item-title">Aenean Malesuada Consectetur Risus</a>
+						    		<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur mollis ornare vel leo.</p>
+						    		<p class="item-buttons">
+						    			<a href="#" class="btn btn-info tip" title="" data-original-title="Edit"><i class="icon-pencil"></i></a>
+						    			<a href="#" class="btn btn-danger tip" title="" data-original-title="Move to trash"><i class="icon-trash"></i></a>
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+		    	</div>
+		    </div>
+		</div>
+		
+		<!-- <h1><%= title %></h1>
+		<p>Welcome to <%= title %></p> -->
+	</body>
 </html>
